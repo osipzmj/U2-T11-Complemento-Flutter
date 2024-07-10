@@ -163,19 +163,132 @@ Resultado
 ## 05: Functions.
 ### Código
 ```
+import 'dart:io';
+
+int suma(int a, int b){
+  return a + b;
+}
+
+void saludar(String nombre){
+  print("Hola $nombre!");
+}
+
+//Declaramos función con parametros opcionales
+// void imprimirTicket(String producto, [int cantidad = 1, int monto = 10]){
+//   print("$producto, $cantidad, $monto");  
+// }
+
+void imprimirCorreo(String correo, {String remitente="Anónimo"}){
+  print("$correo, $remitente");  
+}
+
+var miResta = (int a, int b) => a - b;
+
+void main(List<String> arguments) {
+/*int n1, n2;
+  print("Favor de teclear un número: ");
+  n1 = int.parse(stdin.readLineSync()!);
+  print("Favor de teclear un segundo número: ");
+  n2 = int.parse(stdin.readLineSync()!);
+  print("La suma es: ${suma(n1, n2)}");
+*/
+  saludar("Oscar Pérez");
+  // imprimirTicket("Jabon zote");
+  // imprimirTicket("Jabon zote", 3, 45);
+  imprimirCorreo("ossytres8@gmail.com", remitente: "Oscar Pérez");
+
+  var miFuncion = (int a, int b) => a + b;
+  print(miFuncion(53,5));
+
+  print (miResta(5,78));
+
+  var numeros = [1,2,3,4];
+  numeros.forEach((num){print("Número: $num");});
+}
+
+
 
 ```
 ### Imágenes
+
+Código
+
+![image](https://github.com/osipzmj/U2-T11-Complemento-Flutter/assets/99992053/014b3301-bad7-411f-bc72-383d8d0070b7)
+
+Resultado
+
+![image](https://github.com/osipzmj/U2-T11-Complemento-Flutter/assets/99992053/b34d7c9a-52fc-4ad1-a9ee-579408920dcd)
 
 ## 06: Classes.
 ### Código
 ```
+class Animal {
+  String _nombre = "Sin nombre";
+  int _edad = 0;
+
+  //Constructor
+// Animal(){
+//   print("Constructor fue llamado");
+// }
+
+//Constructor con parametros
+Animal({String nombre = "Anónimo", int edad = 0}){
+  _nombre = nombre;
+  _edad = edad;
+}
+
+  void comer(){
+    print("Comiendo");
+  }
+
+  void cambiarEstado(String _nombre, int edad){
+    _nombre;
+    _edad;
+  }
+
+  void imprimir(){
+     print("Animal $_nombre, Edad $_edad");
+  }
+}
+
+void main(){
+  var a = Animal();
+  print(a._nombre);
+  print(a._edad);
+
+  a._nombre = "Hipopotamo";
+  a._edad = 3;
+
+  print("Animal: ${a._nombre}, Edad: ${a._edad}");
+  a.comer();
+
+  int x = 0;
+  print(a is Animal);
+
+  a.cambiarEstado("Gatito", 0);
+
+  a.imprimir();
+
+  var a2 = Animal();
+  var a3 = Animal(nombre: "Pantera", edad: 5);
+
+  a3.imprimir();
+}
 ```
 ### Imágenes
+
+Código
+
+![image](https://github.com/osipzmj/U2-T11-Complemento-Flutter/assets/99992053/ab470476-3849-4392-871c-81c2f84dcbd7)
+
+Resultado
+
+![image](https://github.com/osipzmj/U2-T11-Complemento-Flutter/assets/99992053/7744c77d-a90c-4b29-8431-ae465d6f6603)
 
 ## 07: Constructors and names.
 ### Código
 ```
+
 ```
 ### Imágenes
 
@@ -187,9 +300,72 @@ Resultado
 
 ## 09: Abstract class.
 ### Código
+Código clases_abstractas.dart
 ```
+import 'figura.dart';
+
+// CREAR LA FUNCIÓN MAIN 
+void main(){
+  var circulo = Circulo(5);
+  circulo.calcularArea();
+
+  print("El área del circulo con radio ${circulo.radio} es: ${circulo.calcularArea()}");
+  
+  var rectangulo = Rectangulo(10, 50);
+
+  print("El área del rectangulo con altura ${rectangulo.altura} y base ${rectangulo.base} es: ${rectangulo.calcularArea()}");
+}
+```
+
+Código figura.dart
+```
+// CREAR UNA CLASE ABSTRACTA LLAMADA FIGURA
+
+abstract class Figura{
+  // CREAR UN MÉTODO ABSTRACTO
+  double calcularArea();
+}
+
+// CLASE RECTANGULO QUE HEREDA DE FIGURA
+class Rectangulo extends Figura{
+  
+  //Atributos
+  double base, altura;
+  //Constructor
+  Rectangulo(this.base, this.altura);
+  
+  @override
+  double calcularArea(){
+    return base * altura;
+  }
+}
+
+// CLASE CIRCULO QUE HEREDA DE FIGURA
+class Circulo extends Figura{
+  //Atributo radio
+  double radio = 0;
+
+  //Constructor
+  Circulo(this.radio);
+
+  @override
+  double calcularArea(){
+    return 3.14 * radio * radio;
+  }
+}
 ```
 ### Imágenes
+Código clases_abstractas
+
+![image](https://github.com/osipzmj/U2-T11-Complemento-Flutter/assets/99992053/8813ad3f-06ed-414c-88bc-5e87576676f9)
+
+Código figura
+
+![image](https://github.com/osipzmj/U2-T11-Complemento-Flutter/assets/99992053/2ae49daf-f9a3-459d-8b8a-a891ed3949da)
+
+Resultado
+
+![image](https://github.com/osipzmj/U2-T11-Complemento-Flutter/assets/99992053/a08e5889-0045-4add-8225-cd4bceb5f6ab)
 
 ## 10: Mixins.
 ### Código
@@ -361,12 +537,45 @@ Resultado
 ## 14: Streams.
 ### Código
 ```
+void main(){
+  Stream<int> stream = Stream.periodic(Duration(seconds: 1),(contador)=>
+  contador).take(10);
+  
+  stream.listen((datos)=>print("Dato recibido: $datos"));
 
+  Stream<int> otroStream = Stream.fromIterable([1,3,5,7,9,11]);
+  otroStream.listen((data)=>print("Dato recibido: $data"));
+}
 ```
 ### Imágenes
+
+Código
+
+![image](https://github.com/osipzmj/U2-T11-Complemento-Flutter/assets/99992053/027f7ee2-f2cc-40e7-895a-4ea0885dea0f)
+
+Resultado
+
+![image](https://github.com/osipzmj/U2-T11-Complemento-Flutter/assets/99992053/a5b34495-60ea-412e-a7e5-5127ed6b891e)
 
 ## 15: Stream await.
 ### Código
 ```
+void main() async{
+    Stream<int> stream = Stream.periodic(Duration(seconds: 1),(contador)=>
+  contador).take(10);
+
+  await for(var data in stream){
+    print("Dato recibido: $data");
+  }  
+  print("Fin del stream");
+}
 ```
 ### Imágenes
+
+Código
+
+![image](https://github.com/osipzmj/U2-T11-Complemento-Flutter/assets/99992053/43b94130-8ddc-4fe5-aca2-d3057d8647ba)
+
+Resultado
+
+![image](https://github.com/osipzmj/U2-T11-Complemento-Flutter/assets/99992053/32baa504-c049-4944-b6a3-87577b3f70eb)

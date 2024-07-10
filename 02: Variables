@@ -1,6 +1,6 @@
-###Dart basics VARIABLES
+## Dart basics VARIABLES
 
-###Código
+### Código
 int suma(int n1, int n2){
   print("Función Suma");
   return n1 + n2;
@@ -29,4 +29,4 @@ void main() {
   print("Me quiere $miCrush? ${isValid==true?'Si':'No'}");
 }
 
-###Imágenes
+### Imágenes

@@ -288,13 +288,22 @@ Resultado
 ## 07: Constructors and names.
 ### Código
 ```
-
+//Constructor con parametros
+Animal({String nombre = "Anónimo", int edad = 0}){
+  _nombre = nombre;
+  _edad = edad;
+}
 ```
 ### Imágenes
+
+Código
+
+![image](https://github.com/osipzmj/U2-T11-Complemento-Flutter/assets/99992053/ddff26c3-e49b-42bd-99dc-7e458f138d5a)
 
 ## 08: get and set.
 ### Código
 ```
+
 ```
 ### Imágenes
 

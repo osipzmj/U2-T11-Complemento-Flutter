@@ -282,18 +282,69 @@ Resultado futures_delayed
 ## 12: Async Await.
 ### Código
 ```
+//Archivo asynsc_await.dart
+
+void main() async{
+  print("Inicio de programa");
+
+  String resultado = await Future((){
+    return 'Hola mundo';
+  });
+
+  print(resultado);
+
+  print("Fin del programa");
+}
 ```
 ### Imágenes
+
+Código
+
+![image](https://github.com/osipzmj/U2-T11-Complemento-Flutter/assets/99992053/7abdf2ed-32d4-49a4-8f6b-54889e448a1e)
+
+
+Resultado
+
+![image](https://github.com/osipzmj/U2-T11-Complemento-Flutter/assets/99992053/12595871-0ccf-46d8-9b01-08dcca2c1fb0)
 
 ## 13: Try catch finally.
 ### Código
 ```
+void main() {
+  try{
+  int resultado = 10 ~/3;
+  print("La división es $resultado");
+  }on Exception{
+  print("Se produjo una excepción de divisón entre 0");
+  } finally{
+    print("No dividas entre 0");
+  }
+
+  try{
+  List<int> lista = [1,2,3];
+  print(lista[2]);
+  } catch(e){
+    print("Hubo una excepción $e");
+  } finally{
+    print("Operación completada");
+  }
+}
 ```
 ### Imágenes
+
+Código
+
+![image](https://github.com/osipzmj/U2-T11-Complemento-Flutter/assets/99992053/884191d6-ed16-4f45-a203-09ea16065c1c)
+
+Resultado
+
+![image](https://github.com/osipzmj/U2-T11-Complemento-Flutter/assets/99992053/55cb3856-8974-447b-a0d9-1eb799ef0ea4)
+
 
 ## 14: Streams.
 ### Código
 ```
+
 ```
 ### Imágenes
 

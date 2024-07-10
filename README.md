@@ -39,7 +39,9 @@ Resultado
 
 ![image](https://github.com/osipzmj/U2-T11-Complemento-Flutter/assets/99992053/11d5d73c-663f-425d-a8f2-1a93ba4685d3)
 
+Link del proyecto
 
+https://drive.google.com/drive/folders/1CdsnUxcILEBexoBafmN9qlpr7Eolu1tS?usp=sharing
 
 ## 02: Variables.
 ### Código
@@ -83,6 +85,10 @@ Resultado
 
 ![image](https://github.com/osipzmj/U2-T11-Complemento-Flutter/assets/99992053/9cf2adc4-d894-4f7a-b493-d0e949294a6a)
 
+Link del proyecto
+
+https://drive.google.com/drive/folders/1CdsnUxcILEBexoBafmN9qlpr7Eolu1tS?usp=sharing
+
 
 ## 03: Maps. 
 ### Código
@@ -116,6 +122,10 @@ Código
 Resultado
 
 ![image](https://github.com/osipzmj/U2-T11-Complemento-Flutter/assets/99992053/a07a70ff-aca6-4e18-b68e-8b668cf69bcc)
+
+Link del proyecto
+
+https://drive.google.com/drive/folders/1CdsnUxcILEBexoBafmN9qlpr7Eolu1tS?usp=sharing
 
 
 ## 04: List, maps and Iterables.
@@ -159,6 +169,11 @@ Código
 Resultado
 
 ![image](https://github.com/osipzmj/U2-T11-Complemento-Flutter/assets/99992053/22e186a7-9e8e-44ce-8af9-c34f6fa24b1d)
+
+Link del proyecto
+
+https://drive.google.com/drive/folders/1CdsnUxcILEBexoBafmN9qlpr7Eolu1tS?usp=sharing
+
 
 ## 05: Functions.
 ### Código
@@ -218,6 +233,10 @@ Código
 Resultado
 
 ![image](https://github.com/osipzmj/U2-T11-Complemento-Flutter/assets/99992053/b34d7c9a-52fc-4ad1-a9ee-579408920dcd)
+
+Link del proyecto
+
+https://drive.google.com/drive/folders/1IflcKFbcO-LNmzaP65CsVg7rj14_6MMx?usp=sharing
 
 ## 06: Classes.
 ### Código
@@ -285,6 +304,10 @@ Resultado
 
 ![image](https://github.com/osipzmj/U2-T11-Complemento-Flutter/assets/99992053/7744c77d-a90c-4b29-8431-ae465d6f6603)
 
+Link del proyecto
+
+https://drive.google.com/drive/folders/1IflcKFbcO-LNmzaP65CsVg7rj14_6MMx?usp=sharing
+
 ## 07: Constructors and names.
 ### Código
 ```
@@ -294,7 +317,9 @@ Animal({String nombre = "Anónimo", int edad = 0}){
   _edad = edad;
 }
 ```
-### Imágenes
+Link del proyecto
+
+https://drive.google.com/drive/folders/1IflcKFbcO-LNmzaP65CsVg7rj14_6MMx?usp=sharing
 
 Código
 
@@ -303,9 +328,68 @@ Código
 ## 08: get and set.
 ### Código
 ```
+class Animal {
+  String _nombre = "Sin nombre";
+  int _edad = 0;
 
+  //Constructor
+// Animal(){
+//   print("Constructor fue llamado");
+// }
+
+//Constructor con parametros
+Animal({String nombre = "Anónimo", int edad = 0}){
+  _nombre = nombre;
+  _edad = edad;
+}
+
+  void comer(){
+    print("Comiendo");
+  }
+
+  void cambiarEstado(String _nombre, int edad){
+    _nombre;
+    _edad;
+  }
+
+  void imprimir(){
+     print("Animal $_nombre, Edad $_edad");
+  }
+}
+
+void main(){
+  var a = Animal();
+  print(a._nombre);
+  print(a._edad);
+
+  a._nombre = "Hipopotamo";
+  a._edad = 3;
+
+  print("Animal: ${a._nombre}, Edad: ${a._edad}");
+  a.comer();
+
+  int x = 0;
+  print(a is Animal);
+
+  a.cambiarEstado("Gatito", 0);
+
+  a.imprimir();
+
+  var a2 = Animal();
+  var a3 = Animal(nombre: "Pantera", edad: 5);
+
+  a3.imprimir();
+}
 ```
 ### Imágenes
+
+Código
+
+![image](https://github.com/osipzmj/U2-T11-Complemento-Flutter/assets/99992053/7db00841-bb03-4ecc-8ec8-76a3ac3b713d)
+
+Link del proyecto
+
+https://drive.google.com/drive/folders/1IflcKFbcO-LNmzaP65CsVg7rj14_6MMx?usp=sharing
 
 ## 09: Abstract class.
 ### Código
@@ -376,6 +460,11 @@ Resultado
 
 ![image](https://github.com/osipzmj/U2-T11-Complemento-Flutter/assets/99992053/a08e5889-0045-4add-8225-cd4bceb5f6ab)
 
+Link del proyecto
+
+https://drive.google.com/drive/folders/1vnvBBZtOAEt7JY2ZakFMg6Nify7mMbzN?usp=sharing
+
+
 ## 10: Mixins.
 ### Código
 ```
@@ -417,6 +506,10 @@ Código
 Resultado
 
 ![image](https://github.com/osipzmj/U2-T11-Complemento-Flutter/assets/99992053/658d6a7d-f91d-43a5-bcc2-7bd87460c753)
+
+Link del proyecto
+
+https://drive.google.com/drive/folders/15ryBd7XErQ2U1xjlBq18vHvIijccJzh-?usp=sharing
 
 ## 11: Futures.
 ### Código
@@ -481,6 +574,10 @@ Resultado futures_delayed
 
 ![image](https://github.com/osipzmj/U2-T11-Complemento-Flutter/assets/99992053/d137d306-3e56-43f5-99d6-ed5ff936e5a8)
 
+Link del proyecto
+
+https://drive.google.com/drive/folders/1hPpMmANdepC52-JO9lxsWUMBwHIQ4u7i?usp=sharing
+
 ## 12: Async Await.
 ### Código
 ```
@@ -508,6 +605,10 @@ Código
 Resultado
 
 ![image](https://github.com/osipzmj/U2-T11-Complemento-Flutter/assets/99992053/12595871-0ccf-46d8-9b01-08dcca2c1fb0)
+
+Link del proyecto
+
+https://drive.google.com/drive/folders/1hPpMmANdepC52-JO9lxsWUMBwHIQ4u7i?usp=sharing
 
 ## 13: Try catch finally.
 ### Código
@@ -541,6 +642,10 @@ Código
 Resultado
 
 ![image](https://github.com/osipzmj/U2-T11-Complemento-Flutter/assets/99992053/55cb3856-8974-447b-a0d9-1eb799ef0ea4)
+
+Link del proyecto 
+
+https://drive.google.com/drive/folders/1HbFTlCUItHAGBIC4n8MheFDoBI8rfndz?usp=sharing
 
 
 ## 14: Streams.
